@@ -48,3 +48,5 @@ print(kn49.fit(fish_data, fish_target))
 print(kn49.score(fish_data, fish_target))
 
 print(35/49)
+
+
