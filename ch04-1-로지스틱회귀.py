@@ -67,3 +67,32 @@ print(lr.classes_)
 # 다항은 단위 값이 다른 데이터를 가지고 학습 할때
 # 근접은 기업이 요구하는 기술 스택 + 회원의 기술 스택을 통해서 매칭 할때?
 
+print(lr.coef_, lr.intercept_)
+
+decisions = lr.decision_function(train_bream_smelt[:5])
+print(decisions)
+
+from scipy.special import expit
+print(expit(decisions))
+
+
+lr = LogisticRegression(C=20, max_iter=1000)
+lr.fit(train_scaled, train_target)
+print(lr.score(train_scaled, train_target))
+print(lr.score(test_scaled,test_target))
+
+print(lr.predict(test_scaled[:5]))
+
+proba = lr.predict_proba(test_scaled[:5])
+print(np.round(proba, decimals=3))
+
+print(lr.classes_)
+
+print(lr.coef_.shape, lr.intercept_.shape)
+
+decisions = lr.decision_function(test_scaled[:5])
+print(np.round(decision,decimals=2))
+
+from scipy.special import softmax
+proba = softmax(decisions, axis =1)
+print(np.round(proba, decimals=3))
