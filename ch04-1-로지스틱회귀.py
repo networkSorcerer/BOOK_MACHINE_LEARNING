@@ -1,6 +1,6 @@
 import pandas as pd
 
-fish = pd.read_csv('http://bit.ly/fish_csv_data')
+fish = pd.read_csv('http://bit.ly/fish_csv_data')# 기사를 읽어 들이고?
 fish.head()
 
 print(pd.unique(fish['Species']))
